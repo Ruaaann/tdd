@@ -16,7 +16,7 @@ def create_counter(name):
     global COUNTERS
 
     if name in COUNTERS:
-        return {"Message":f"Counter {name} already exists"}, status.HTTP_409_CONFLICT
+        return {"Message": f"Counter {name} already exists"}, status.HTTP_409_CONFLICT
 
     COUNTERS[name] = 0
     return {name: COUNTERS[name]}, status.HTTP_201_CREATED
@@ -28,7 +28,7 @@ def update_counter(name):
     global COUNTERS
     # Increment the counter by 1
     COUNTERS[name] += 1
-        # return the new counter and a 200_OK return code
+    # return the new counter and a 200_OK return code
     return {name: COUNTERS[name]}, status.HTTP_200_OK
 
 
