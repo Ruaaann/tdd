@@ -11,6 +11,7 @@ COUNTERS = {}
 # on this function is "POST".
 
 @app.route('/counters/<name>', methods=['POST'])
+
 def create_counter(name):
     """Create a counter"""
     app.logger.info(f"Request to create counter: {name}")
