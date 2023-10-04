@@ -64,3 +64,13 @@ class CounterTest(TestCase):
         result = client.get('/counters/foo')
         # ensure successful return code for GET
         self.assertEqual(result.status_code, status.HTTP_200_OK)
+
+
+    def test_delete_counter(self):
+        """It should delete a counter"""
+        # Create a counter
+        client = app.test_client()
+        client.post('/counters/blub')
+        # Delete counter
+        result = client.delete('/counters/blub')
+        self.assertEqual(result.status_code, status.HTTP_204_NO_CONTENT)
